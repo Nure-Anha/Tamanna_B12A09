@@ -1,2 +1,16 @@
 @import "tailwindcss";
 @plugin "daisyui";
+
+li a.active{
+    text-decoration: underline;
+    color: blueviolet;
+}
+
+.footer_title_heading {
+    color:black;
+    font-weight:600;
+    font-size: large;
+    margin-bottom: 20px;
+    
+}
+
