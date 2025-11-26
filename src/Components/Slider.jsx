@@ -20,7 +20,7 @@ const Slider = () => {
       >
         <SwiperSlide>
             <div>
-            <img className='w-full h-[500px] object-cover brightness-50' src="/assets/img6.jpg" alt="" />
+            <img className='w-full h-[500px] object-cover brightness-50' src="/myassets/img1.jpg" alt="" />
 
             <div className='absolute inset-0 text-white flex flex-col justify-center items-center'>
               <h6 className='font-medium text-xl'>Fun & Learning</h6> <br />
@@ -31,7 +31,7 @@ const Slider = () => {
 
         <SwiperSlide>
           <div>
-            <img className='w-full h-[500px] object-cover brightness-50' src="/assets/img2.jpg" alt="" />
+            <img className='w-full h-[500px] object-cover brightness-50' src="/myassets/img2.jpg" alt="" />
 
             <div className='absolute inset-0 text-white flex flex-col justify-center items-center'>
               <h6 className='font-medium text-xl'>Fun & Learning</h6> <br />
@@ -42,7 +42,7 @@ const Slider = () => {
 
         <SwiperSlide>
           <div>
-            <img className='w-full h-[500px] object-cover brightness-50' src="/assets/img3.jpg" alt="" />
+            <img className='w-full h-[500px] object-cover brightness-50' src="/myassets/img3.jpg" alt="" />
 
             <div className='absolute inset-0 text-white flex flex-col justify-center items-center'>
               <h6 className='font-medium text-xl'>Fun & Learning</h6> <br />

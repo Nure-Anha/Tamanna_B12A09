@@ -1,0 +1,74 @@
+[
+  {
+    "toyId": 1,
+    "toyName": "Lego Classic Bricks",
+    "sellerName": "Toys R Us Local",
+    "sellerEmail": "contact@toysruslocal.com",
+    "price": 49.99,
+    "rating": 4.7,
+    "availableQuantity": 75,
+    "description": "A timeless set of colorful Lego bricks that encourages creativity and problem-solving. Kids can build anything they imagine.",
+    "pictureURL": "https://i.ibb.co.com/nqLnr26q/Lego-Classic-Bricks.jpg",
+    "subCategory": "Building Blocks"
+  },
+  {
+    "toyId": 7,
+    "toyName": "Dinosaur Action Figures",
+    "sellerName": "Toys World",
+    "sellerEmail": "sales@toysworld.com",
+    "price": 34.99,
+    "rating": 4.7,
+    "availableQuantity": 70,
+    "description": "A pack of detailed dinosaur action figures that spark imagination and adventure for young kids.",
+    "pictureURL": "https://i.ibb.co.com/RkG8zLWB/Dinosaur-Action-Figures.jpg",
+    "subCategory": "Action Figures"
+  },
+  {
+    "toyId": 6,
+    "toyName": "Soft Plush Teddy Bear",
+    "sellerName": "Cute & Cozy",
+    "sellerEmail": "contact@cuteandcozy.com",
+    "price": 23.99,
+    "rating": 4.9,
+    "availableQuantity": 150,
+    "description": "A super soft teddy bear made from premium fabric, perfect for hugging and comforting little ones.",
+    "pictureURL": "https://i.ibb.co.com/GQpPvv1R/Soft-Plush-Teddy-Bear.jpg",
+    "subCategory": "Stuffed Animals"
+  },
+  {
+    "toyId": 12,
+    "toyName": "Remote Control Police Car",
+    "sellerName": "RC Fun Zone",
+    "sellerEmail": "support@rcfunzone.com",
+    "price": 35.99,
+    "rating": 4.6,
+    "availableQuantity": 55,
+    "description": "A fast RC police car with lights and sound that delivers exciting chase action.",
+    "pictureURL": "https://i.ibb.co.com/hxsLYq6q/Remote-Control-Police-Car.jpg",
+    "subCategory": "Remote Control Toys"
+  },
+  {
+    "toyId": 18,
+    "toyName": "Foam Building Blocks",
+    "sellerName": "SafePlay Toys",
+    "sellerEmail": "support@safeplay.com",
+    "price": 24.99,
+    "rating": 4.5,
+    "availableQuantity": 65,
+    "description": "Soft foam blocks that allow safe building and imaginative play for toddlers and preschoolers.",
+    "pictureURL": "https://i.ibb.co.com/C5dd5CPP/Foam-Building-Blocks.jpg",
+    "subCategory": "Building Blocks"
+  },
+  {
+    "toyId": 3,
+    "toyName": "Play-Doh Modeling Pack",
+    "sellerName": "ColorFun Toys",
+    "sellerEmail": "contact@colorfun.com",
+    "price": 14.99,
+    "rating": 4.8,
+    "availableQuantity": 140,
+    "description": "A colorful Play-Doh set perfect for shaping, sculpting, and creative fun.",
+    "pictureURL": "https://i.ibb.co.com/R4zg4wP2/Play-Doh.jpg",
+    "subCategory": "Arts & Crafts"
+  }
+]

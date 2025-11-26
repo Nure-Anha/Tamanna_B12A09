@@ -1,7 +1,33 @@
-import React from 'react';
-import { NavLink } from 'react-router';
+import React, { useContext } from 'react';
+import { Link, NavLink, useNavigate } from 'react-router';
+import { AuthContext } from '../AuthContext';
 
 const Navbar = () => {
+
+
+   // Use CONTEXT 
+          const {user , signOutUser} = useContext(AuthContext) ;  //obj detructuring
+
+
+  // handleLogo
+  const navigate = useNavigate() ;
+  const handleLogo = () => {
+    navigate("/") ;
+  }
+
+
+  // handleLogoutbtn
+  const handleLogoutbtn = () => {
+      signOutUser()
+      .then(() => {
+        console.log("Logged Out Successfully") ;
+        console.log("Nav User" , user) ;
+        
+      }).catch((error) => {
+        console.log("Logout Error" , error.message) ;
+      });
+  }
+
     // Links
     const links = <>
         <li className='font-bold'><NavLink to={"/"}>Home</NavLink></li>
@@ -21,7 +47,10 @@ const Navbar = () => {
         }
       </ul>
     </div>
-    <a className="btn btn-ghost text-5xl font-bold">KiddoLand</a>
+    <div onClick={handleLogo} className='flex space-x-3'>
+      <img className='w-12 h-12 cursor-pointer rounded-full' src="/myassets/Logo.jpg" alt="" />
+      <a className="text-4xl font-bold bg-linear-to-r from-indigo-500 via-purple-500 to-pink-500 bg-clip-text text-transparent mt-2" href=''>KiddoLand</a>
+    </div>
   </div>
   <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal px-1">
@@ -31,7 +60,9 @@ const Navbar = () => {
     </ul>
   </div>
   <div className="navbar-end">
-    <a className="btn w-25 font-bold border-violet-300 hover:bg-violet-600 hover:text-white">Login</a>
+    {
+      user ? <div className='flex space-x-5'><div className='tooltip tooltip-left' data-tip={user.displayName}><img className='w-10 rounded-full cursor-pointer' src={user.photoURL} alt="" /></div> <button onClick={handleLogoutbtn} className='btn'>Logout</button> </div>: <Link className="btn w-25 font-bold border-violet-300 hover:bg-blue-700 hover:text-white" to={'/login'}>Login</Link>
+    }
   </div>
 </div>
     );
