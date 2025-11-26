@@ -51,7 +51,7 @@ const AuthProvider = ({children}) => {
 
 
     // **********
-    const authData = {regWithEmailPass , user, setUser , signInWithEmailPass , signInWithGoogle , signOutUser}
+    const authData = {regWithEmailPass , user, setUser , signInWithEmailPass , signInWithGoogle , signOutUser , loading ,}
 
     return <AuthContext.Provider value={authData}>
         {children} 

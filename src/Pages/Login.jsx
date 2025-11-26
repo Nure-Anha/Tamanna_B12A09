@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { Link } from 'react-router';
+import { Link, useLocation, useNavigate } from 'react-router';
 import { ToastContainer } from 'react-toastify';
 import { AuthContext } from '../AuthContext';
 import { FcGoogle } from "react-icons/fc";
@@ -8,6 +8,11 @@ const Login = () => {
 
      // Use CONTEXT 
         const {signInWithEmailPass , setUser , signInWithGoogle} = useContext(AuthContext) ;  //obj detructuring
+
+
+        const location = useLocation() ;
+        console.log("Look at the State:", location) ;
+        const navigate = useNavigate() ;
 
 
     // handleLoginSubmit
@@ -26,6 +31,7 @@ const Login = () => {
             const signedInUser = res3.user ;
             console.log("signedInUser: ", signedInUser) ;
             setUser(signedInUser) ;
+            navigate(location.state) ;
         })
         .catch(er => {
             console.log("Error Happened Code :", er.code) ;
@@ -42,6 +48,7 @@ const Login = () => {
             const signedInWithGoogleUser = resg.user ;
             console.log("Google signed in by User :", signedInWithGoogleUser) ;
             setUser(signedInWithGoogleUser) ;
+            navigate(location.state) ;
         })
         .catch(errg => {
             console.log("Error G :", errg.code) ;

@@ -11,6 +11,7 @@ import ToyDetails from './Pages/ToyDetails.jsx';
 import Login from './Pages/Login.jsx';
 import Register from './Pages/Register.jsx';
 import AuthProvider from './AuthProvider.jsx';
+import PrivateRoute from './Pages/PrivateRoute.jsx';
 
 
 
@@ -22,7 +23,7 @@ const router = createBrowserRouter([
     Component: Root,
     children: [
       {index: true , Component: Home} ,
-      {path:'toydetails/:id' , Component: ToyDetails} ,  // ":id" te  view more btn thk i.toyId dynamically ashe
+      {path:'toydetails/:id' , element: <PrivateRoute> <ToyDetails></ToyDetails> </PrivateRoute> } ,  // ":id" te  view more btn thk i.toyId dynamically ashe
       {path:'login' , Component: Login} , 
       {path:'register' , Component: Register} , 
     ]
