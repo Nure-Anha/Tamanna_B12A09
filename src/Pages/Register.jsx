@@ -1,10 +1,12 @@
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import { Link } from 'react-router';
 import { ToastContainer } from 'react-toastify';
 import { updateProfile } from 'firebase/auth';
 import { auth } from '../FireBase';
 import { AuthContext } from '../AuthContext';
 import { FcGoogle } from "react-icons/fc";
+import { FaEye, FaEyeSlash } from 'react-icons/fa';
+
 
 const Register = () => {
 
@@ -71,6 +73,12 @@ const Register = () => {
         })
     }
 
+    // Eye Pass
+    const [showPass , setShowPass] = useState(false) ;
+    const handleShowPassword = (e) => {
+        e.preventDefault() ;
+        setShowPass(!showPass) ;
+    }
     
     
     return (
@@ -95,8 +103,13 @@ const Register = () => {
                                 <input type="email" name='email' className="input" placeholder="Your Email" />
                                 <label className="label">PhotoURL</label>
                                 <input type="text" name='photoURL' className="input" placeholder="Enter Your PhotoURL" />
+
                                 <label className="label">Password</label>
-                                <input type="password" name='pass' className="input" placeholder="Your Password" />
+                                <div className='relative'>
+                                    <input type="password" name='pass' className="input" placeholder="Your Password" />
+                                    <button onClick={handleShowPassword} className="btn btn-xs absolute right-5 top-1.5"> {showPass ? <FaEye></FaEye> : <FaEyeSlash></FaEyeSlash>} </button>
+                                </div>
+
                                 <button className="btn btn-neutral mt-4">Register</button>
                             </fieldset>
                         </form>

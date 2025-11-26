@@ -57,6 +57,13 @@ const Login = () => {
     }
 
 
+    // handleForgetPass
+    const navigateFpass = useNavigate() ;
+    const handleForgetPass = () => {
+        navigateFpass("/forgetpass") ;
+    }
+
+
 
     return (
         <div className='bg-[#f1f6fa]  pb-10 pt-10'>
@@ -75,7 +82,7 @@ const Login = () => {
                                 <input type="email" name='email' className="input" placeholder="Your Email" />
                                 <label className="label">Password</label>
                                 <input type="password" name='pass' className="input" placeholder="Your Password" />
-                                <div><a className="link link-hover">Forgot password?</a></div>
+                                <div><a onClick={handleForgetPass} className="link link-hover">Forgot password?</a></div>
                                 <button className="btn btn-neutral mt-4">Login</button>
                             </fieldset>
                         </form>

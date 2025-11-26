@@ -12,6 +12,8 @@ import Login from './Pages/Login.jsx';
 import Register from './Pages/Register.jsx';
 import AuthProvider from './AuthProvider.jsx';
 import PrivateRoute from './Pages/PrivateRoute.jsx';
+import MyProfile from './Pages/MyProfile.jsx';
+import ForgetPass from './Pages/ForgetPass.jsx';
 
 
 
@@ -26,6 +28,8 @@ const router = createBrowserRouter([
       {path:'toydetails/:id' , element: <PrivateRoute> <ToyDetails></ToyDetails> </PrivateRoute> } ,  // ":id" te  view more btn thk i.toyId dynamically ashe
       {path:'login' , Component: Login} , 
       {path:'register' , Component: Register} , 
+      {path:'myprofile' , element: <PrivateRoute> <MyProfile></MyProfile> </PrivateRoute> } ,
+      {path:'forgetpass' , Component: ForgetPass} , 
     ]
   },
 ]);

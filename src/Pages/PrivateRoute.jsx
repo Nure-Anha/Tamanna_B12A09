@@ -10,7 +10,7 @@ const PrivateRoute = ({children}) => {
 
      console.log(user) ; // alrdy user logged in but refreash dile private route(login) e niye jay 
      if(loading) {
-        <p className='text-6xl font-bold'>Loading...........</p>
+        return <span className="loading loading-bars loading-xl ml-170"></span>
         
      }
 
