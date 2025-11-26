@@ -1,4 +1,4 @@
-import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signOut } from 'firebase/auth';
+import { createUserWithEmailAndPassword, GoogleAuthProvider, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut } from 'firebase/auth';
 import { auth } from './FireBase';
 import { AuthContext } from './AuthContext';
 import { useEffect, useState } from 'react';
@@ -6,12 +6,21 @@ import { useEffect, useState } from 'react';
  // contextAPI create leave it to another file for getting error
     // export const AuthContext = createContext() ;
 
+    const googleProvider = new GoogleAuthProvider();
+
 const AuthProvider = ({children}) => {
 
     // Create a password-based account
     const regWithEmailPass = (email , password) => {
         return  createUserWithEmailAndPassword(auth, email, password)
     }
+
+    // Sign In With Google
+    const signInWithGoogle = () => {
+        return signInWithPopup(auth , googleProvider ) ;
+    }
+
+
     // after register console e data ashte late hy in the mntime user reload dile data chole jabe so ...
     const [loading , setLoading] = useState(true) ;
     const [user , setUser] = useState(null) ; // user reg er por set korar kaj reg or login page e not here so need to pass these
@@ -42,7 +51,7 @@ const AuthProvider = ({children}) => {
 
 
     // **********
-    const authData = {regWithEmailPass , user, setUser , signInWithEmailPass , signOutUser}
+    const authData = {regWithEmailPass , user, setUser , signInWithEmailPass , signInWithGoogle , signOutUser}
 
     return <AuthContext.Provider value={authData}>
         {children} 
