@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router';
 import { ToastContainer } from 'react-toastify';
 import { AuthContext } from '../AuthContext';
@@ -13,6 +13,9 @@ const Login = () => {
         const location = useLocation() ;
         console.log("Look at the State:", location) ;
         const navigate = useNavigate() ;
+
+        // for Forget Pass Page
+         const [email , setEmail] = useState("") ;
 
 
     // handleLoginSubmit
@@ -31,6 +34,7 @@ const Login = () => {
             const signedInUser = res3.user ;
             console.log("signedInUser: ", signedInUser) ;
             setUser(signedInUser) ;
+
             navigate(location.state) ;
         })
         .catch(er => {
@@ -58,10 +62,10 @@ const Login = () => {
 
 
     // handleForgetPass
-    const navigateFpass = useNavigate() ;
-    const handleForgetPass = () => {
-        navigateFpass("/forgetpass") ;
-    }
+    // const navigateFpass = useNavigate() ;
+    // const handleForgetPass = () => {
+    //     navigateFpass("/forgetpass") ;
+    // }
 
 
 
@@ -78,11 +82,15 @@ const Login = () => {
                     <div className="card-body">
                         <form onSubmit={handleLoginSubmit}>
                             <fieldset className="fieldset">
+                                
                                 <label className="label">Email</label>
-                                <input type="email" name='email' className="input" placeholder="Your Email" />
+                                <input type="email" name='email' className="input" onChange={(e) => (setEmail(e.target.value))} value={email}  placeholder="Your Email" />
+
                                 <label className="label">Password</label>
                                 <input type="password" name='pass' className="input" placeholder="Your Password" />
-                                <div><a onClick={handleForgetPass} className="link link-hover">Forgot password?</a></div>
+                                
+                                <div><Link to={"/forgetpass"} state={{email}} className="link link-hover text-blue-600 ">Forgot password?</Link></div>
+
                                 <button className="btn btn-neutral mt-4">Login</button>
                             </fieldset>
                         </form>
