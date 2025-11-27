@@ -61,7 +61,7 @@ const Navbar = () => {
   </div>
   <div className="navbar-end">
     {
-      user ? <div className='flex space-x-5'><div className='tooltip tooltip-left' data-tip={user.displayName}><img className='w-10 rounded-full cursor-pointer' src={user.photoURL} alt="" /></div> <button onClick={handleLogoutbtn} className='btn'>Logout</button> </div>: <Link className="btn w-25 font-bold border-violet-300 hover:bg-blue-700 hover:text-white" to={'/login'}>Login</Link>
+      user ? <div className='flex space-x-5'><div className='tooltip tooltip-left' data-tip={user.displayName}><img className='w-10 rounded-full cursor-pointer' src={user.photoURL} alt="" /></div> <button onClick={handleLogoutbtn} className='btn w-25 font-bold border-violet-300 hover:bg-blue-700 hover:text-white'>Logout</button> </div>: <Link className="btn w-25 font-bold border-violet-300 hover:bg-blue-700 hover:text-white" to={'/login'}>Login</Link>
     }
   </div>
 </div>

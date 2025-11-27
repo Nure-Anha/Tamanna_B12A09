@@ -29,7 +29,7 @@ const router = createBrowserRouter([
       {path:'login' , Component: Login} , 
       {path:'register' , Component: Register} , 
       {path:'myprofile' , element: <PrivateRoute> <MyProfile></MyProfile> </PrivateRoute> } ,
-      {path:'forgetpass' , Component: ForgetPass} , 
+      {path:'forgetpass/:email' , Component: ForgetPass} , 
     ]
   },
 ]);

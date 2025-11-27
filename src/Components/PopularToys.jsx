@@ -1,6 +1,7 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router';
+import { motion } from "motion/react"
 
 const PopularToys = () => {
 
@@ -29,7 +30,7 @@ const PopularToys = () => {
         
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 container '>
                 {
-                    popularData.map(i =>  <div key={i.toyId} className="card bg-base-100 w-full shadow-2xl p-5">
+                    popularData.map(i =>  <motion.div initial={{ scale: 0 }} animate={{ scale: 1 , transition: { duration: 2 } }} key={i.toyId} className="card bg-base-100 w-full shadow-2xl p-5">
                                 <figure>
                                     <img className='h-50 object-cover w-full rounded-2xl' src={i ?.pictureURL} alt="" />
                                 </figure>
@@ -45,7 +46,7 @@ const PopularToys = () => {
                                         <button onClick={() => handleViewMore(i.toyId)} className="btn btn-primary p-5">View More</button>
                                     </div>
                                 </div>
-                            </div>)
+                            </motion.div>)
                 }
             </div>
         </div>

@@ -1,6 +1,6 @@
 import { useContext, useState } from 'react';
 import { Link } from 'react-router';
-import { ToastContainer } from 'react-toastify';
+import { toast, ToastContainer } from 'react-toastify';
 import { updateProfile } from 'firebase/auth';
 import { auth } from '../FireBase';
 import { AuthContext } from '../AuthContext';
@@ -12,6 +12,9 @@ const Register = () => {
 
     // Use CONTEXT 
     const {regWithEmailPass , signInWithGoogle , user} = useContext(AuthContext) ;  //obj detructuring
+
+    const [errorUI , setErrorUI] = useState('') ;
+    const [success , setSuccess] = useState(false) ;
 
 
     // handleRegisterSubmit
@@ -30,11 +33,25 @@ const Register = () => {
         const passVall = e.target.pass.value ;
         console.log("PassValll :" , passVall) ;
 
+        // REGEX
+        const upperCase = /[A-Z]/ ;
+        const loweCase = /[a-z]/ ;
+        if(!upperCase.test(passVall)) {
+           return toast.error("Must have an UpperCase letter in the password ") ;
+        }
+        if(!loweCase.test(passVall)) {
+           return toast.error("Must have an LoweCase letter in the password ") ;
+        }
+        if(passVall.length < 6) {
+           return toast.error("Password Length must be at least 6 character") ;
+        }
+
 
         // toast.success("Account Registered Successfully") ;
         // e.target.reset() ;
 
-
+        setErrorUI('') ;
+        setSuccess(false) ;
         regWithEmailPass(emailVall , passVall)
         .then(res => {
             const newUser = res.user ;
@@ -44,9 +61,12 @@ const Register = () => {
                 displayName: nameVall, photoURL: photoURLVall
                 }).then(() => {
                 // Profile updated with name and photo now all is ready!
-                // setUser(newUser) ; //Now no need to setUser here — onAuthStateChanged will update automatically
+                // setUser(newUser) ; //Now no need to setUser here — onAuthStateChanged will update automatically    
                 console.log("User Value Set by authStateChanged's setUser :", user) ; // as i alrdy setUser but the user in console shows null so need to get the user which done in authprov file
-                // ...
+                e.target.reset() ;
+                setSuccess(true) ;
+                toast.success("Account Registered Successfully") ;
+
                 }).catch(() => {
                 // An error occurred
                 // ...
@@ -55,21 +75,29 @@ const Register = () => {
         .catch(err => {
             console.log("Error Happened Code :", err.code) ;
             console.log("Error Happened Message :", err.message) ;
+            setErrorUI(err.message) ;
+            toast.error("Something Went Wrong") ;
         })
     }
 
 
     // handleGoogleSignUp
     const handleGoogleSignUp = () => {
+         setErrorUI('') ;
+         setSuccess(false) ;
+
         signInWithGoogle() 
         .then(resg => {
             const signedInWithGoogleUser = resg.user ;
             console.log("Google signed in by User :", signedInWithGoogleUser) ;
             // setUser(signedInWithGoogleUser) ;
+            setSuccess(true) ;
+            toast.success("Account Registered Successfully") ;
         })
         .catch(errg => {
             console.log("Error G :", errg.code) ;
             console.log("Error G :", errg.message) ;
+            toast.error("Something Went Wrong") ;
         })
     }
 
@@ -106,14 +134,20 @@ const Register = () => {
 
                                 <label className="label">Password</label>
                                 <div className='relative'>
-                                    <input type="password" name='pass' className="input" placeholder="Your Password" />
+                                    <input type={showPass ? 'text' : 'password'} name='pass' className="input" placeholder="Your Password" />
                                     <button onClick={handleShowPassword} className="btn btn-xs absolute right-5 top-1.5"> {showPass ? <FaEye></FaEye> : <FaEyeSlash></FaEyeSlash>} </button>
                                 </div>
 
                                 <button className="btn btn-neutral mt-4">Register</button>
                             </fieldset>
                         </form>
-                        <button onClick={handleGoogleSignUp} className="btn mt-4 text-md text-gray-700"><FcGoogle className='text-xl'></FcGoogle>Sign Up With Google</button>
+                        {
+                            success && <p className='text-green-700'>Account Registered Successfully</p>
+                        }
+                        {
+                            errorUI && <p className='text-red-700'>{errorUI} </p>
+                        }
+                        <button onClick={handleGoogleSignUp} className="btn mt-4 text-md text-gray-700"><FcGoogle className='text-xl'></FcGoogle>Sign Up With Google</button> 
                         <p className='text-md font-medium text-center'>Already have an account? <Link className='text-blue-600 font-bold' to={'/login'}>Log in Now </Link></p>
                     </div>
                     </div>

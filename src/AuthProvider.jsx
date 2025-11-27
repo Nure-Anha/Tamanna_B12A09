@@ -1,4 +1,4 @@
-import { createUserWithEmailAndPassword, GoogleAuthProvider, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from 'firebase/auth';
+import { createUserWithEmailAndPassword, GoogleAuthProvider, onAuthStateChanged, sendPasswordResetEmail, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from 'firebase/auth';
 import { auth } from './FireBase';
 import { AuthContext } from './AuthContext';
 import { useEffect, useState } from 'react';
@@ -55,13 +55,18 @@ const AuthProvider = ({children}) => {
         displayName: nameVar, photoURL: photoURLVar
         })
         .then(() => {
-            setUser({...auth.currentUser, displayName:nameVar, photoURL:photoURLVar})
+            setUser({...user, displayName:nameVar, photoURL:photoURLVar}) // {User} er info distructure kore than update info bshbe
         })
+    }
+
+    // Send a password reset email
+    const resetPass = (e_mail) => {
+        return sendPasswordResetEmail(auth, e_mail) ;
     }
 
 
     // **********
-    const authData = {regWithEmailPass , user, setUser , signInWithEmailPass , signInWithGoogle , signOutUser , loading , updateProf ,}
+    const authData = {regWithEmailPass , user, setUser , signInWithEmailPass , signInWithGoogle , signOutUser , loading , updateProf , resetPass}
 
 
 

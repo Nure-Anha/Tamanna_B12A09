@@ -1,5 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../AuthContext';
+import { toast, ToastContainer } from 'react-toastify';
 
 
 const MyProfile = () => {
@@ -10,25 +11,25 @@ const MyProfile = () => {
 
 
     //  Update Profile
-     const [nameChange , setNameChange] = useState('') ;
-     const [photoChange , setPhotoChange] = useState('') ;
+    //  const [nameChange , setNameChange] = useState('') ;
+    //  const [photoChange , setPhotoChange] = useState('') ;
 
-     useEffect(() => {
-        if(user) {
-            setNameChange(user?.displayName || '') ;
-            setPhotoChange(user?.photoURL || '') ;
-        }
-     } , [user])
+    //  useEffect(() => {
+    //     if(user) {
+    //         setNameChange(user?.displayName || '') ;
+    //         setPhotoChange(user?.photoURL || '') ;
+    //     }
+    //  } , [user])
 
 
 
-    // handleNameInput
-    const handleNameInput = (e) => {
-        setNameChange(e.target.value) ;
-    }
-    const handlePhotoInput = (e) => {
-        setPhotoChange(e.target.value) ;
-    }
+    // // handleNameInput
+    // const handleNameInput = (e) => {
+    //     setNameChange(e.target.value) ;
+    // }
+    // const handlePhotoInput = (e) => {
+    //     setPhotoChange(e.target.value) ;
+    // }
 
     //  handleSaveChanges
     const handleSaveChanges = (e) => {
@@ -41,7 +42,8 @@ const MyProfile = () => {
         updateProf(nameV , photoV) 
         .then(updateRes => {
             console.log("Profile updated successfully!", updateRes) ;
-            alert("Profile updated successfully!") ;
+            // toast.success() ;
+            toast.success("Profile updated successfully!")
         })
         .catch(upd_err => {
             console.error("Update failed: ", upd_err);
@@ -61,21 +63,25 @@ const MyProfile = () => {
             <p className='text-lg text-black font-medium text-center mt-2'>{user?.email} </p>
 
 
-
-            <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl mx-auto mt-15">
+            <div>
+                <h1 className="text-4xl font-bold  text-center mt-20">Update Profile</h1>
+            </div>
+            <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl mx-auto mt-5">
+                    
                     <div className="card-body">
                         <form onSubmit={handleSaveChanges}>
                             <fieldset className="fieldset">
                                 <label className="label">Name</label>
-                                <input onChange={handleNameInput} type="text" name='name' value={nameChange} className="input" placeholder="Your Full Name" />
+                                <input type="text" name='name' defaultValue={user?.displayName} className="input" placeholder="Your Full Name" />
                                 <label className="label">PhotoURL</label>
-                                <input onChange={handlePhotoInput} type="text" name='photo' value={photoChange} className="input" placeholder="Enter Your PhotoURL" />
+                                <input  type="text" name='photo' defaultValue={user?.photoURL} className="input" placeholder="Enter Your PhotoURL" />
                                 
                                 <button className="btn btn-neutral mt-4">Save Changes</button>
                             </fieldset>
                         </form>
                     </div>
             </div>
+            <ToastContainer></ToastContainer>
            
         </div>
     );

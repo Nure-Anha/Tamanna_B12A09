@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { motion } from "motion/react"
 import { Navigation, Pagination } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 // Import Swiper styles
@@ -19,19 +19,19 @@ const Slider = () => {
         className="mySwiper text-white "
       >
         <SwiperSlide>
-            <div>
-            <img className='w-full h-[500px] object-cover brightness-50' src="/myassets/img1.jpg" alt="" />
+            <motion.div initial={{ scale: 1.5 }} animate={{ scale: 1 , transition: { duration: 1 } }}>
+            <img className='w-full h-[550px] object-cover brightness-50' src="/myassets/img1.jpg" alt="" />
 
             <div className='absolute inset-0 text-white flex flex-col justify-center items-center'>
               <h6 className='font-medium text-xl'>Fun & Learning</h6> <br />
               <p className='text-6xl font-bold text-center'>Early Learning Starts <br /> with the Right Toys</p>
             </div>
-          </div>
+          </motion.div>
         </SwiperSlide>
 
         <SwiperSlide>
           <div>
-            <img className='w-full h-[500px] object-cover brightness-50' src="/myassets/img2.jpg" alt="" />
+            <img className='w-full h-[550px] object-cover brightness-50' src="/myassets/img2.jpg" alt="" />
 
             <div className='absolute inset-0 text-white flex flex-col justify-center items-center'>
               <h6 className='font-medium text-xl'>Fun & Learning</h6> <br />
@@ -42,7 +42,7 @@ const Slider = () => {
 
         <SwiperSlide>
           <div>
-            <img className='w-full h-[500px] object-cover brightness-50' src="/myassets/img3.jpg" alt="" />
+            <img className='w-full h-[550px] object-cover brightness-50' src="/myassets/img3.jpg" alt="" />
 
             <div className='absolute inset-0 text-white flex flex-col justify-center items-center'>
               <h6 className='font-medium text-xl'>Fun & Learning</h6> <br />

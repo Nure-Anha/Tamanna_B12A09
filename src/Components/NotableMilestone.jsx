@@ -6,7 +6,7 @@ const NotableMilestone = () => {
             <img className='w-full h-[500px] object-cover brightness-50' src="/myassets/img5.jpg" alt="" />
 
             <div className='absolute inset-0 text-white flex flex-col justify-center items-center '>
-                <h4 className='font-bold text-4xl mt-10'>Notable milestone</h4>
+                <h4 className='font-bold text-4xl mt-10'>Notable Milestone</h4>
 
                 <p className='lg:text-xl font-semibold lg:mt-8 text-center mb-10 lg:mb-15'>The invention of a groundbreaking toy, a major shift in toy manufacturing techniques,<br /> or a significant moment in the history of children's play</p>
 
