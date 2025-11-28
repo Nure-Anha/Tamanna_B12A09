@@ -16,6 +16,8 @@ import MyProfile from './Pages/MyProfile.jsx';
 import ForgetPass from './Pages/ForgetPass.jsx';
 import MyOrders from './Pages/MyWishlist.jsx';
 import MyWishlist from './Pages/MyWishlist.jsx';
+import PageError from './Pages/PageError.jsx';
+import ErrorLayout from './Pages/ErrorLayout.jsx';
 
 
 
@@ -25,6 +27,8 @@ const router = createBrowserRouter([
   {
     path: "/",
     Component: Root,
+    errorElement: <ErrorLayout></ErrorLayout> ,
+
     children: [
       {index: true , Component: Home} ,
       {path:'toydetails/:id' , element: <PrivateRoute> <ToyDetails></ToyDetails> </PrivateRoute> } ,  // ":id" te  view more btn thk i.toyId dynamically ashe

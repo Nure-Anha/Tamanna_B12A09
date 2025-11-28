@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { getWishList, removeFromLS } from './WishList';
-import { toast } from 'react-toastify';
 
 const MyWishlist = () => {
 
@@ -34,7 +33,7 @@ const MyWishlist = () => {
 
                 <div className='flex gap-x-15 mt-5'>
                     <p className='text-green-500 font-semibold flex' ><img className='w-7 h-7' src="/myassets/icon-ratings.png" alt="" />{k.rating}M </p>
-                    <p className='text-green-500 font-semibold flex' ><img className='w-7 h-7' src="/public/myassets/quantity.png" alt="" />Qty:{k.availableQuantity}Pcs </p>
+                    <p className='text-green-500 font-semibold flex' ><img className='w-7 h-7' src="/myassets/quantity.png" alt="" />Qty:{k.availableQuantity}Pcs </p>
                     <p className='text-orange-500 text-lg font-semibold flex' >Price: {k.price}BDT </p>
 
                 </div>  
