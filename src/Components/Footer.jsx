@@ -6,7 +6,7 @@ const Footer = () => {
     return (
         <footer className="footer sm:footer-horizontal bg-[#d5d7da] text-base-content p-10">
             <div>
-                <h3 className='font-bold text-5xl' >KiddoLand</h3>
+                <h3 className='font-bold text-3xl lg:text-5xl' >KiddoLand</h3>
                 <p className='text-[16px]   mt-3'>
                     At Kiddoland, we believe every child deserves <br /> a world full of wonder. Our toys are designed <br /> to spark creativity, laughter, and <br /> magical moments for kids of all ages.
                 </p>

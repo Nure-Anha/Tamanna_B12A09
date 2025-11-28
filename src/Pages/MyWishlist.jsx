@@ -23,15 +23,15 @@ const MyWishlist = () => {
     return (
         <div className="p-20 bg-[#f1f6fa] ">
       {WishListed_Toys.map((k) => (
-        <div className='grid grid-cols-3 mb-10 bg-white rounded-xl p-4 w-250'>
+        <div className='grid grid-cols-1 lg:grid-cols-3 mb-10 bg-white rounded-xl p-4 lg:w-250'>
                         
             <div>
-                <img className='w-[150px] rounded-2xl ml-5 ' src={k.pictureURL} alt={k.toyName} />
+                <img className='lg:w-[150px] rounded-2xl lg:ml-5 ' src={k.pictureURL} alt={k.toyName} />
             </div>
-            <div className='ml-[-140px] p-2'>
+            <div className='lg:ml-[-140px] p-2'>
                 <p className='text-[#001931] font-medium text-xl'>{k.toyName} </p>
 
-                <div className='flex gap-x-15 mt-5'>
+                <div className='flex flex-col space-y-2.5 lg:space-y-0 lg:flex-row lg:gap-x-15 mt-5'>
                     <p className='text-green-500 font-semibold flex' ><img className='w-7 h-7' src="/myassets/icon-ratings.png" alt="" />{k.rating}M </p>
                     <p className='text-green-500 font-semibold flex' ><img className='w-7 h-7' src="/myassets/quantity.png" alt="" />Qty:{k.availableQuantity}Pcs </p>
                     <p className='text-orange-500 text-lg font-semibold flex' >Price: {k.price}BDT </p>
@@ -39,7 +39,7 @@ const MyWishlist = () => {
                 </div>  
             </div>
 
-                <button onClick={()=> handleRemove(k.toyId)} className='btn w-30 ml-50 bg-[#00D390] border-0 flex justify-center items-center mt-8'>Remove</button>
+                <button onClick={()=> handleRemove(k.toyId)} className='btn w-30 ml-28 lg:ml-50 bg-[#00D390] border-0 flex justify-center items-center mt-8'>Remove</button>
         </div> 
       ))}
 
