@@ -54,6 +54,7 @@ const MyProfile = () => {
 
     return (
         <div className='bg-[#f1f6fa] pb-15 pt-15'>
+            <title>My Profile</title>
             <div className="avatar flex justify-center items-center ">
                 <div className="rounded-full">
                     <img className='object-cover w-34' src={user?.photoURL} />

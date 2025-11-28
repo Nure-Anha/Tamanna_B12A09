@@ -50,8 +50,8 @@ const Navbar = () => {
       </ul>
     </div>
     <div onClick={handleLogo} className='flex space-x-1 lg:space-x-3'>
-      <img className='mt-2 lg:mt-0 w-8 h-8 lg:w-12 lg:h-12 cursor-pointer rounded-full' src="/myassets/Logo.jpg" alt="" />
-      <a className="text-3xl lg:text-4xl font-bold bg-linear-to-r from-indigo-500 via-purple-500 to-pink-500 bg-clip-text text-transparent mt-2" href=''>KiddoLand</a>
+      <img className='mt-3 ml-[-15px] lg:mt-0 lg:ml-[-0px] w-6 h-6 lg:w-12 lg:h-12 cursor-pointer rounded-full' src="/myassets/Logo.jpg" alt="" />
+      <a className="text-3xl lg:text-5xl font-bold bg-linear-to-r from-indigo-500 via-purple-500 to-pink-500 bg-clip-text text-transparent mt-2" href=''>KiddoLand</a>
     </div>
   </div>
   <div className="navbar-center hidden lg:flex">

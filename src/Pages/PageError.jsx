@@ -11,7 +11,7 @@ const handleGoBackBtn = () => {
 }
 
     return (
-        <div className='bg-[#f1f6fa] pb-20'>
+        <div className='bg-[#f1f6fa] pb-50'>
             <img className='mx-auto pt-20 mb-10 w-[200px]' src="/myassets/error-404.png" alt="error png" />
             <p className='text-[#001931] font-semibold text-5xl text-center '>Oops, page not found!</p>
             <p className='text-[#627382] text-xl font-normal mt-5 text-center'>The page you are looking for is not available.</p>

@@ -23,17 +23,17 @@ const LatestProducts = () => {
 
 
     return (
-        <div className='ml-20 mr-20 mb-20'>
-            <h3 className='text-5xl font-bold text-center mt-20 mb-5'>Latest Products</h3>
+        <div className='ml-15 lg:ml-20 lg:mr-20 mb-20'>
+            <h3 className='mr-10 lg:mr-0 text-5xl font-bold text-center mt-20 mb-10'>Latest Products</h3>
         
-            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 container '>
+            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3  gap-12 container '>
                 {
-                    latestData.map(i =>  <div key={i.toyId} className="card bg-base-100 w-full shadow-2xl p-5">
+                    latestData.map(i =>  <div key={i.toyId} className="card bg-base-100 shadow-2xl w-70 lg:w-full p-5">
                                 <figure>
                                     <img className='h-50 object-cover w-full rounded-2xl' src={i ?.pictureURL} alt="" />
                                 </figure>
                                 <div className="card-body">
-                                    <div className='flex space-x-15 md:space-x-25 lg:space-x-15 xl:space-x-35'>
+                                    <div className='flex space-x-10 md:space-x-25 lg:space-x-15 xl:space-x-35'>
                                         <div className=' flex gap-x-1.5'><img className='w-7 h-7'  src="/myassets/icon-ratings.png" alt="" /> <p className='mt-2 font-bold text-md'>{i ?.rating}M</p> </div>
                                         
                                         <div className='flex gap-x-1.5'> <img className='w-10 h-10 mt-1 ' src="/myassets/quantity.png" alt="" /> <p className='font-bold text-md mt-1'>Qty:{i ?.availableQuantity}</p> </div>

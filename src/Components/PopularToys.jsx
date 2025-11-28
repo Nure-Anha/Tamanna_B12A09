@@ -25,12 +25,12 @@ const PopularToys = () => {
 
 
     return (
-        <div className='ml-20 mr-20 mb-20'>
-            <h3 className='text-5xl font-bold text-center mt-20 mb-5'>Popular Toys</h3>
+        <div className='ml-15 lg:ml-20 lg:mr-20 mb-20'>
+            <h3 className='mr-10 lg:mr-0 text-5xl font-bold text-center mt-20 mb-10'>Popular Toys</h3>
         
-            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 container '>
+            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3  gap-12 container'>
                 {
-                    popularData.map(i =>  <motion.div initial={{ scale: 0 }} animate={{ scale: 1 , transition: { duration: 2 } }} key={i.toyId} className="card bg-base-100 w-full shadow-2xl p-5">
+                    popularData.map(i =>  <motion.div initial={{ scale: 0 }} animate={{ scale: 1 , transition: { duration: 2 } }} key={i.toyId} className="card bg-base-100 w-70 lg:w-full shadow-2xl p-5">
                                 <figure>
                                     <img className='h-50 object-cover w-full rounded-2xl' src={i ?.pictureURL} alt="" />
                                 </figure>

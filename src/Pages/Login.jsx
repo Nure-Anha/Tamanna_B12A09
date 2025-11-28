@@ -103,7 +103,7 @@ const Login = () => {
         <div className='bg-[#f1f6fa]  pb-10 pt-10'>
             <title>Login</title>
             <div className="hero  min-h-screen">
-                <div className="hero-content flex-col  bg-white w-150 p-10 rounded-2xl shadow-xl">
+                <div className="hero-content flex-col  bg-white md:w-100 lg:w-150 p-10 rounded-2xl shadow-xl">
                     <div>
                         <h1 className="text-5xl font-bold mb-5">Login now!</h1>
                     </div>

@@ -30,7 +30,7 @@ const ToyDetails = () => {
         console.log(similarID_ToyFound) ;
 
         if(!similarID_ToyFound) {
-            return <p>Not Found</p>
+            return <p><span className="loading loading-bars loading-xl ml-170"></span></p>
         }
 
 
@@ -87,14 +87,14 @@ const ToyDetails = () => {
             </div>
         </div>
         {/* Form */}
-                    <div className="hero  min-h-screen pb-100 lg:pb-0 md:pb-0">
+                    <div className="hero min-h-screen pb-100 lg:pb-0 md:pb-0">
                         <div className="hero-content flex-col ">
                             <div className="text-center lg:text-left">
                                 <h1 className="text-7xl font-bold mb-8">Try now!</h1>
                             </div>
                             <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
                                 <div className="card-body">
-                                    <form  onSubmit={handleTryNowSubmit} className='w-78'>
+                                    <form  onSubmit={handleTryNowSubmit} className='lg:w-78'>
                                         <fieldset className="fieldset">
                                             <label className="label">Name</label>
                                             <input type="text" name='name' className="input" placeholder="Your Name" />

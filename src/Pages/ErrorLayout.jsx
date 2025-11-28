@@ -6,11 +6,11 @@ import Footer from '../Components/Footer';
 const ErrorLayout = () => {
     return (
         <div>
-            <Navbar></Navbar>
+            {/* <Navbar></Navbar> */}
 
             <PageError></PageError>
 
-            <Footer></Footer>
+            {/* <Footer></Footer> */}
         </div>
     );
 };
