@@ -1,16 +1,45 @@
-# React + Vite
+Project Name: KiddoLand-Kids Toy Marketplace
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Purpose: KiddoLand is a modern and user-friendly kid's toy marketplace website where users can browse toys, 
+view more detailed information, sign up and sign in using email and password, or Google sign-in, and sign up option. Add toys to a wishlist and view their profile information and
+also update. If they forget their password, they have the option to reset their password using their email address.
 
-## React Compiler
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
 
-## Expanding the ESLint configuration
+Live URL: https://tamanna-b12a09-kiddoland.netlify.app/
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+
+
+Key Features:
+1. Firebase Authentication : there included following things-
+Email + Password login/signup
+Google login
+private routes
+Redirect to the previous page after login
+
+2. Popular and Latest Toys Section of Home Page
+Dynamic JSON data loading 
+Fully responsive card
+Product name, rating, price, available quantity and a view more button shown visually to go to the Toy Details page
+
+3. Toy Details Page - private route
+Shows full information about a toy
+Add to Wishlist button with a tooltip
+Wishlist stored with localStorage
+Prevents adding the same toy twice
+
+4. Wishlist Page(Extra Private Route)
+Items stored in localStorage
+Fully responsive list layout
+Remove item from wishlist
+
+5. Toast Notifications
+Shows success/error messages for:
+Login , signin , signup
+Add to wishlist
+Remove from wishlist and so on
+
+
+NPM Package: I use Swiper slider and Motion framer 
