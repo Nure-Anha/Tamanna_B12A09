@@ -14,6 +14,8 @@ import AuthProvider from './AuthProvider.jsx';
 import PrivateRoute from './Pages/PrivateRoute.jsx';
 import MyProfile from './Pages/MyProfile.jsx';
 import ForgetPass from './Pages/ForgetPass.jsx';
+import MyOrders from './Pages/MyWishlist.jsx';
+import MyWishlist from './Pages/MyWishlist.jsx';
 
 
 
@@ -30,6 +32,7 @@ const router = createBrowserRouter([
       {path:'register' , Component: Register} , 
       {path:'myprofile' , element: <PrivateRoute> <MyProfile></MyProfile> </PrivateRoute> } ,
       {path:'forgetpass/:email' , Component: ForgetPass} , 
+      {path:'mywishlist' , element: <PrivateRoute> <MyWishlist></MyWishlist> </PrivateRoute> } ,
     ]
   },
 ]);

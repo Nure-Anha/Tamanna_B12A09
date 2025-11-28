@@ -31,7 +31,9 @@ const Navbar = () => {
     // Links
     const links = <>
         <li className='font-bold'><NavLink to={"/"}>Home</NavLink></li>
-        <li className='font-bold'><NavLink to={"/myprofile"}>My Profile</NavLink></li></>
+        <li className='font-bold'><NavLink to={"/myprofile"}>My Profile</NavLink></li>
+        <li className='font-bold'><NavLink to={"/mywishlist"}>My WishList</NavLink></li>
+        </>
     return (
         <div className="navbar bg-base-100 shadow-sm">
   <div className="navbar-start">
